@@ -1,8 +1,8 @@
 ---
-layout: film review
 title: Film review of Pacific Rim 2
 date: 2019-04-07 00:35:21
 tags: FilmReview
+categories: Film review
 ---
 
 整理一下心情，刚刚看完了环太平洋2，以下是观后感。
