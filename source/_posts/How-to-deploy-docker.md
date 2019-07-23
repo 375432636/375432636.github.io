@@ -1,7 +1,8 @@
 ---
 title: How to deploy docker
 date: 2019-05-17 15:02:53
-tags:
+tags: 
+    -Docker
 ---
 
 ## 1. Background
