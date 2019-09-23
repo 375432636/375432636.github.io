@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python Data Structures | JoJo&#39;s Bizarre Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="There is 6 data structures available, The Builtins data structures are: lists, tuples, dictionaries, strings, sets and frozensets. |–|–||Type|Feature||–|–||lists|可变,可排序,可增减,可包含任意对象||tuples|不可变,不可排序,不可">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Data Structures">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/Python-Data-Structures/index.html">
+<meta property="og:site_name" content="JoJo&#39;s Bizarre Blog">
+<meta property="og:description" content="There is 6 data structures available, The Builtins data structures are: lists, tuples, dictionaries, strings, sets and frozensets. |–|–||Type|Feature||–|–||lists|可变,可排序,可增减,可包含任意对象||tuples|不可变,不可排序,不可">
+<meta property="og:locale" content="English">
+<meta property="og:updated_time" content="2019-09-23T08:06:56.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python Data Structures">
+<meta name="twitter:description" content="There is 6 data structures available, The Builtins data structures are: lists, tuples, dictionaries, strings, sets and frozensets. |–|–||Type|Feature||–|–||lists|可变,可排序,可增减,可包含任意对象||tuples|不可变,不可排序,不可">
+  
+    <link rel="alternate" href="/atom.xml" title="JoJo&#39;s Bizarre Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">JoJo&#39;s Bizarre Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Python-Data-Structures" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/23/Python-Data-Structures/" class="article-date">
+  <time datetime="2019-09-23T03:37:35.000Z" itemprop="datePublished">2019-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python Data Structures
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>There is 6 data structures available, The Builtins data structures are: lists, tuples, dictionaries, strings, sets and frozensets.</p>
+<p>|–|–|<br>|Type|Feature|<br>|–|–|<br>|lists|可变,可排序,可增减,可包含任意对象|<br>|tuples|不可变,不可排序,不可增减,可包含任意对象,节省内存|<br>|sets|mutable,unordered|<br>|frozensets|immutable,unordered|</p>
+<h2 id="1-List"><a href="#1-List" class="headerlink" title="1. List"></a>1. List</h2><h3 id="1-1-Difference-between-append-and-extend"><a href="#1-1-Difference-between-append-and-extend" class="headerlink" title="1.1 Difference between append() and extend()"></a>1.1 Difference between append() and extend()</h3><p>List have several methodes amongst which the append() and extend() methods. the former appends an object to the end of the list (e.g., another list) while the later appends each element of the iterable object (e.g., another list) to the end of the list.</p>
+<p>For example, we can append an object (here the characteer <code>c</code>) to the end of a simple list as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; stack = [&apos;a&apos;, &apos;b&apos;]</span><br><span class="line">&gt;&gt;&gt; stack.append(&apos;c&apos;)</span><br><span class="line">&gt;&gt;&gt; stack</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<p>However, if we want to append several objects contained in a list, the result as expected (or not…) is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; stack.append([&apos;d&apos;, &apos;e&apos;, &apos;f&apos;])</span><br><span class="line">&gt;&gt;&gt; stack</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, [&apos;d&apos;, &apos;e&apos;, &apos;f&apos;]]</span><br></pre></td></tr></table></figure>
+<p>The object [‘d’, ‘e’, ‘f’] has been appended to the existing list. However, it happens that some times what we want is to append the elements one by one of a given list rather the list itself. You can do that manually of course, but a better solution is to use the extend() method as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; stack = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">&gt;&gt;&gt; stack.extend([&apos;d&apos;, &apos;e&apos;, &apos;f&apos;])</span><br><span class="line">&gt;&gt;&gt; stack</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;]</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-Other-list-methods"><a href="#1-2-Other-list-methods" class="headerlink" title="1.2 Other list methods"></a>1.2 Other list methods</h3><h4 id="1-2-1-index"><a href="#1-2-1-index" class="headerlink" title="1.2.1 index"></a>1.2.1 index</h4><p>The index() methods searches for an element in a list. For instance:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;b&apos;, &apos;a&apos;]</span><br><span class="line">&gt;&gt;&gt; my_list.index(&apos;b&apos;)</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>It returns the index of the first and only occurrence of <code>b</code>. If you want to specify a range of valid index, you can indicate the start and stop indices:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;b&apos;, &apos;a&apos;]</span><br><span class="line">&gt;&gt;&gt; my_list.index(&apos;b&apos;,2)</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-2-remove"><a href="#1-2-2-remove" class="headerlink" title="1.2.2 remove"></a>1.2.2 remove</h4><p>Similarly, you can remove the first occurrence of an element as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list.remove(&apos;a&apos;)</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[&apos;b&apos;, &apos;c&apos;, &apos;b&apos;, &apos;a&apos;]</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-3-insert"><a href="#1-2-3-insert" class="headerlink" title="1.2.3 insert"></a>1.2.3 insert</h4><p>You can remove element but also insert element wherever you want in a list:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list.insert(2,&apos;a&apos;)</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[&apos;b&apos;, &apos;c&apos;, &apos;a&apos;, &apos;b&apos;]</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-4-pop"><a href="#1-2-4-pop" class="headerlink" title="1.2.4 pop"></a>1.2.4 pop</h4><p>Or remove the last element of a list by using:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list.pop()</span><br><span class="line">&apos;a&apos;</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[&apos;b&apos;, &apos;c&apos;, &apos;b&apos;]</span><br></pre></td></tr></table></figure>
+<p>which also returns the value that has been removed.</p>
+<h4 id="1-2-5-count"><a href="#1-2-5-count" class="headerlink" title="1.2.5 count"></a>1.2.5 count</h4><p>You can count the number of element of a kind:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list.count(&apos;b&apos;)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-6-sort"><a href="#1-2-6-sort" class="headerlink" title="1.2.6 sort"></a>1.2.6 sort</h4><p>There is a sort() method that performs an in-place sorting:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list.sort()</span><br><span class="line">&gt;&gt;&gt; my _list</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;b&apos;, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<p>Here, it is quite simple since the elements are all characters. For standard types, the sorting works well. Imagine now that you have some non-standard types. You can overwrite the function used to perform the comparison as the first argument of the sort() method.</p>
+<p>There is the possiblity to sort in the reverse order:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list.sort(reverse=Ture)</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[&apos;c&apos;,&apos;b&apos;,&apos;b&apos;,&apos;a&apos;]</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-7-reverse"><a href="#1-2-7-reverse" class="headerlink" title="1.2.7 reverse"></a>1.2.7 reverse</h4><p>Finally, you can reverse the element in-place</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list = [&apos;a&apos;, &apos;c&apos;, &apos;b&apos;]</span><br><span class="line">&gt;&gt;&gt; my_list.reverse()</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[&apos;b&apos;, &apos;c&apos;, &apos;a&apos;]</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-Operators"><a href="#1-3-Operators" class="headerlink" title="1.3 Operators"></a>1.3 Operators</h3><p>The + operator can be used to <em>extend</em> a list:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list = [1]</span><br><span class="line">&gt;&gt;&gt; my_list =+= [2]</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[1, 2]</span><br><span class="line">&gt;&gt;&gt; my_list += [3, 4]</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+<p>The * operator ease the creation of list with similar values</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; my_list = [1, 2]</span><br><span class="line">&gt;&gt;&gt; my_list = my_list * 2</span><br><span class="line">&gt;&gt;&gt; my_list</span><br><span class="line">[1, 2, 1, 2]</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-Slicing-切片"><a href="#1-4-Slicing-切片" class="headerlink" title="1.4 Slicing[切片]"></a>1.4 Slicing[切片]</h3><p>Slicing uses the symbol: to access to part of a list:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list[first index:last index:step]</span><br><span class="line">&gt;&gt;&gt; list[:]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5]</span><br><span class="line">[0, 1, 2, 3, 4, 5]</span><br><span class="line">&gt;&gt;&gt; a[2:]</span><br><span class="line">[2, 3, 4, 5]</span><br><span class="line">&gt;&gt;&gt; a[:2]</span><br><span class="line">[0, 1]</span><br><span class="line">&gt;&gt;&gt; a[2:-1]</span><br><span class="line">[2, 3, 4]</span><br></pre></td></tr></table></figure>
+<p>By default the first index is 0, the last index is the last one…, and the step is 1. The step is optional. So the following slicing are equivalent:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6, 7, 8]</span><br><span class="line">&gt;&gt;&gt; a[:]</span><br><span class="line">[1, 2, 3, 4, 5, 6, 7, 8]</span><br><span class="line">&gt;&gt;&gt; a[::1]</span><br><span class="line">[1, 2, 3, 4, 5, 6, 7, 8]</span><br><span class="line">&gt;&gt;&gt; a[0::]</span><br><span class="line">[1, 2, 3, 4, 5, 6, 7, 8]</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-List-comprehension"><a href="#1-5-List-comprehension" class="headerlink" title="1.5 List comprehension"></a>1.5 List comprehension</h3><p>Traditionally, a piece of code that loops over a sequence could be written as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; evens = []</span><br><span class="line">&gt;&gt;&gt; for i in range(10):</span><br><span class="line">...     if i % 2 == 0:</span><br><span class="line">...         evens.append(i)</span><br><span class="line">&gt;&gt;&gt; evens</span><br><span class="line">[0, 2, 4, 6, 8]</span><br></pre></td></tr></table></figure>
+<p>This may work, but it actually makes things slower for Python because the interpreter works on each loop to determine what part of the sequence has to be changed. </p>
+<p>A <em>list comprehension</em> is the correct answer:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [i for i in range(10) if i % 2 == 0]</span><br><span class="line">[0, 2, 4, 6, 8]</span><br></pre></td></tr></table></figure>
+<p>Besides the fact that it is more efficient, it is also shorter and involves fewer elements.</p>
+<h3 id="1-6-Filtering-Lists"><a href="#1-6-Filtering-Lists" class="headerlink" title="1.6 Filtering Lists"></a>1.6 Filtering Lists</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; li = [1, 2]</span><br><span class="line">&gt;&gt;&gt; [elem*2 for elem in li if elem &gt; 1]</span><br><span class="line">[4]</span><br></pre></td></tr></table></figure>
+<h3 id="1-7-Lists-as-Stacks"><a href="#1-7-Lists-as-Stacks" class="headerlink" title="1.7 Lists as Stacks"></a>1.7 Lists as Stacks</h3><p>The Python documentation gives an example of how to use lists as stacks, that is a last-in, first-out data structures (LIFO).</p>
+<p>An item can be added to a list by using the <em>append()</em> method. The last item can be removed from the list by using the <em>pop()</em> method without passing any index to it. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; stack = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]</span><br><span class="line">&gt;&gt;&gt; stack.append(&apos;e&apos;)</span><br><span class="line">&gt;&gt;&gt; stack.append(&apos;f&apos;)</span><br><span class="line">&gt;&gt;&gt; stack</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;]</span><br><span class="line">&gt;&gt;&gt; stack.pop()</span><br><span class="line">&apos;f&apos;</span><br><span class="line">&gt;&gt;&gt; stack</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;]</span><br></pre></td></tr></table></figure>
+<h3 id="1-8-Lists-as-Queues"><a href="#1-8-Lists-as-Queues" class="headerlink" title="1.8 Lists as Queues"></a>1.8 Lists as Queues</h3><p>Another usage of list, again presented in Python documentation is to use lists as queues, that is first in - first out (<em>FIFO</em>).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; queue = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]</span><br><span class="line">&gt;&gt;&gt; queue.append(&apos;e&apos;)</span><br><span class="line">&gt;&gt;&gt; queue.append(&apos;f&apos;)</span><br><span class="line">&gt;&gt;&gt; queue</span><br><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;]</span><br><span class="line">&gt;&gt; queue.pop(0)</span><br><span class="line">&apos;a&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="1-9-How-to-copy-a-list"><a href="#1-9-How-to-copy-a-list" class="headerlink" title="1.9 How to copy a list"></a>1.9 How to copy a list</h3><p>There are three ways to copy a list:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; l2 = list(l)</span><br><span class="line">&gt;&gt;&gt; l2 = l[:]</span><br><span class="line">&gt;&gt;&gt; import copy</span><br><span class="line">&gt;&gt;&gt; l2 = copy.copy(l)</span><br></pre></td></tr></table></figure>
+<h5 id="Warning-Don’t-do-l2-l-which-is-refrence-not-a-copy"><a href="#Warning-Don’t-do-l2-l-which-is-refrence-not-a-copy" class="headerlink" title="Warning: Don’t do l2 = l, which is refrence, not a copy."></a>Warning: Don’t do l2 = l, which is refrence, not a copy.</h5><h4 id="1-9-1-Inserting-items-into-a-sorted-list"><a href="#1-9-1-Inserting-items-into-a-sorted-list" class="headerlink" title="1.9.1 Inserting items into a sorted list"></a>1.9.1 Inserting items into a sorted list</h4><p>The bisect module provides tools to manipulate sorted lists.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = [4, 1]</span><br><span class="line">&gt;&gt;&gt; x.sort()</span><br><span class="line">&gt;&gt;&gt; import bisect</span><br><span class="line">&gt;&gt;&gt; bisect.insort(x, 2)</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">[1, 2, 4]</span><br></pre></td></tr></table></figure>
+<p>To know where the index where the value would have been inserted, you could have use(预测将要数字在里面会处在哪个位置):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = [4, 1]</span><br><span class="line">&gt;&gt;&gt; x.sort()</span><br><span class="line">&gt;&gt;&gt; import bisect</span><br><span class="line">&gt;&gt;&gt; bisect.bisect(x, 2)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/23/Python-Data-Structures/" data-id="ck0w4nt5000081ar3y1e4cepo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/17/How-to-deploy-docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to deploy docker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Film-review/">Film review</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/log-tutorial/">log tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">-Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FilmReview/">FilmReview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/log/">log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reading-notes/">reading notes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/self-control/">self control</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 10px;">-Docker</a> <a href="/tags/FilmReview/" style="font-size: 10px;">FilmReview</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/reading-notes/" style="font-size: 10px;">reading notes</a> <a href="/tags/self-control/" style="font-size: 10px;">self control</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/23/Python-Data-Structures/">Python Data Structures</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/17/How-to-deploy-docker/">How to deploy docker</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/10/Android-modify-recovery-to-update/">安卓修改Recovery，获得刷机权限</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/07/PacificRim2/">Film review of Pacific Rim 2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/09/How-to-write-reading-notes/">How to write reading notes</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Jonathan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
